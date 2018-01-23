@@ -17,10 +17,14 @@ Methods:
    			case "String":
    			case "Number":
    			case "Function":
+   			case "RegExp":
    				return obj;
    				break;
    			case "Date":
    				return new Date(obj);
+   				break;
+   			case "Error":
+   				return new Error(obj);
    				break;
    			case "Array":
    				let ar = [];
