@@ -50,6 +50,28 @@ Methods:
 	   	} else {
 	   		return obj.constructor.name.toLowerCase();
 	   	}
+	   },
+
+	   getKeys: function(obj){
+	   	if(obj === undefined || obj === null){
+	   		return obj;
+	   	} else {
+	   		return Object.keys(obj);
+	   	}
+	   },
+
+	   getValues: function(obj){
+	   	if(obj === undefined || obj === null){
+	   		return obj;
+	   	} else if(Object.values){
+   			return Object.values(obj);
+   		} else {
+   			let values = [];
+   			Object.keys(obj).forEach((key)=>{
+   				values.push(obj[key]);
+   			});
+   			return values;
+   		}
 	   }
 	}
 
