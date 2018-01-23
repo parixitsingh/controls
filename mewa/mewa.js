@@ -43,4 +43,15 @@ Methods:
    	}
    }
    context.copy = c;
+
+   function gTO(obj){
+   	if(!obj && obj !=="" && obj !== false && obj!== 0){ 
+   		return (new String(obj)).toLowerCase();
+   	} else {
+   		return obj.constructor.name.toLowerCase();
+   	}
+   }
+
+   context.getTypeOf = gTO;
+
 })(this);
