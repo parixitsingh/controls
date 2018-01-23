@@ -6,52 +6,55 @@ Methods:
 				   and returns a deep copy of the object.
 */
 ((context)=>{
+	var mds = {
    //Deep cloning of a object of primitive or non-primitive type
-   function c(obj){
-   	if(!obj){
-   		return obj;
-   	} else {
-   		let cn = obj.constructor.name;
-   		switch(cn){
-   			case "Boolean":
-   			case "String":
-   			case "Number":
-   			case "Function":
-   			case "RegExp":
-   				return obj;
-   				break;
-   			case "Date":
-   				return new Date(obj);
-   				break;
-   			case "Error":
-   				return new Error(obj);
-   				break;
-   			case "Array":
-   				let ar = [];
-   				for(let i = 0; i < obj.length; i++){
-   					ar[i] = c(obj[i]);
-   				}
-   				return ar;
-   				break;
-   			case "Object":
-   				let obj1 = {};
-   				Object.keys(obj).forEach((key)=>{
-   					obj1[key] = c(obj[key]);
-   				});
-   				return obj1;
-   		}
-   	}
-   }
-   context.copy = c;
+	   copy: function (obj){
+	   	if(!obj){
+	   		return obj;
+	   	} else {
+	   		let cn = obj.constructor.name;
+	   		switch(cn){
+	   			case "Boolean":
+	   			case "String":
+	   			case "Number":
+	   			case "Function":
+	   			case "RegExp":
+	   				return obj;
+	   				break;
+	   			case "Date":
+	   				return new Date(obj);
+	   				break;
+	   			case "Error":
+	   				return new Error(obj);
+	   				break;
+	   			case "Array":
+	   				let ar = [];
+	   				for(let i = 0; i < obj.length; i++){
+	   					ar[i] = copy(obj[i]);
+	   				}
+	   				return ar;
+	   				break;
+	   			case "Object":
+	   				let obj1 = {};
+	   				Object.keys(obj).forEach((key)=>{
+	   					obj1[key] = copy(obj[key]);
+	   				});
+	   				return obj1;
+	   		}
+	   	}
+	   },
 
-   function gTO(obj){
-   	if(!obj && obj !=="" && obj !== false && obj!== 0){ 
-   		return (new String(obj)).toLowerCase();
-   	} else {
-   		return obj.constructor.name.toLowerCase();
-   	}
-   }
+	   getTypeOf: function(obj){
+	   	if(!obj && obj !=="" && obj !== false && obj!== 0){ 
+	   		return (new String(obj)).toLowerCase();
+	   	} else {
+	   		return obj.constructor.name.toLowerCase();
+	   	}
+	   }
+	}
 
-   context.getTypeOf = gTO;
+   Object.keys(mds).forEach((key)=>{
+   	context[key] = mds[key];
+   });
 
 })(this);
