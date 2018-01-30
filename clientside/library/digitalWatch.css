@@ -1,0 +1,79 @@
+.digital-watch.coral{
+	width: 500px;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	font-size: 50px;
+	color: white;
+}
+.digital-watch.coral .watch-content{
+	box-shadow: 10px 10px 20px 5px brown;
+	display: inline-block;
+	border-radius: 25px;
+}
+.digital-watch.coral .dw-hour {
+	width: 100px;
+	display: inline-block;
+	background: lightblue;
+	border-radius: 25px 0px 0px 25px;
+}
+.digital-watch.coral .dw-minute {
+	width: 100px;
+	display: inline-block;
+	background: lightblue;
+}
+.digital-watch.coral .dw-second {
+	width: 100px;
+	display: inline-block;
+	background: lightblue;
+	border-radius: 0px 25px 25px 0px;
+}
+.digital-watch.coral .hm-seperator{
+	width: 10px;
+	display: inline-block;
+	background: lightblue;
+}
+.digital-watch.coral .ms-seperator{
+	width: 10px;
+	display: inline-block;
+	background: lightblue;
+}
+
+
+
+.digital-watch.coral-long{
+	width: 100px;
+	height: 500px;
+	line-height: 100px;
+	text-align: center;
+	font-size: 50px;
+	color: white;
+}
+.digital-watch.coral-long .watch-content{
+	box-shadow: 10px 10px 20px 5px brown;
+	display: inline-block;
+	border-radius: 25px;
+}
+.digital-watch.coral-long .dw-hour {
+	width: 100px;
+	display: block;
+	background: lightblue;
+	border-radius: 25px 25px 0px 0px;
+}
+.digital-watch.coral-long .dw-minute {
+	width: 100px;
+	display: block;
+	background: lightblue;
+}
+.digital-watch.coral-long .dw-second {
+	width: 100px;
+	display: block;
+	background: lightblue;
+	border-radius: 0px 0px 25px 25px;
+}
+.digital-watch.coral-long .hm-seperator{
+	display: none;
+}
+.digital-watch.coral-long .ms-seperator{
+	display: none;
+}

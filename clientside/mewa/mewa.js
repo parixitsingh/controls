@@ -72,6 +72,10 @@ Methods:
    			});
    			return values;
    		}
+	   },
+
+	   getTag: function(tag){
+	   	return `<${tag}></${tag}>`;
 	   }
 	}
 
