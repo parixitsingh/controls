@@ -26,7 +26,7 @@ public class Selection {
 
             //Sorting the array numbers
             for(int i = 0 ; i < 10 - 1; i++){
-                //Keeping the value at the i position, and i as the position
+                //Keeping i as the position
                 int position = i;
 
                 //finding the minimum number
