@@ -16,6 +16,7 @@ public class Child extends Parent {
 		//System.out.println("Child Created");
 	}
 
+	@Override
 	public void PrintName(){
 		System.out.println("My name is Child");
 	}
