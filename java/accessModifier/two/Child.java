@@ -41,9 +41,16 @@ public class Child extends Parent {
 		//Child object assigned to Parent reference
 		p = c;
 
-		//Child object referenced by Parent is type casted into child reference
-		Child c2 = (Child) p;
-		c2.PrintName();
+		//Checking the type of p if it is of type Parent or not
+		boolean isParentType = p instanceof Parent;
+
+		if(isParentType){
+			//Child object referenced by Parent is type casted into child reference
+			Child c2 = (Child) p;
+			c2.PrintName();
+		}
+
+
 		// //Trying to access private member of parent
 		// try {
 		// 	System.out.println(c.privateMember);
