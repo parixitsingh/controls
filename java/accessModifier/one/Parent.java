@@ -15,7 +15,7 @@ public class Parent {
 
 
 	public Parent(){
-		System.out.println("I am Parent");
+		//System.out.println("Parent Created");
 	}
 
 	public void PrintName(){
