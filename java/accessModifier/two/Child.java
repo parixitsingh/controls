@@ -19,6 +19,9 @@ public class Child extends Parent {
 	@Override
 	public void PrintName(){
 		System.out.println("My name is Child");
+		
+		//Calling the Parent class PrintName method using super keyword
+		super.PrintName();
 	}
 
 	public static void main(String[] args){
