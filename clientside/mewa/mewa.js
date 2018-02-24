@@ -87,7 +87,7 @@ Methods:
                   return num;
                 } else {
                     let b = parseInt(num / 2), c = num % 2;
-                    return convertToBinary(b) + c + ""; 
+                    return convertDecimalToBinary(b) + c + ""; 
                 }
            }
 	}
