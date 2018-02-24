@@ -78,7 +78,7 @@ Methods:
 	   	return `<${tag}></${tag}>`;
 	   },
            
-           convertToBinary: function(num){
+           convertDecimalToBinary: function(num){
                 var isNum = isNaN(num);
                 if(isNum || (num % 2 > 1)){
                     return false;
