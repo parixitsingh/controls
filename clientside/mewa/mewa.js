@@ -44,6 +44,8 @@ Methods:
 	   	}
 	   },
 
+           //Gets an object as an object
+           //Returns the typeof object provided
 	   getTypeOf: function(obj){
 	   	if(!obj && obj !=="" && obj !== false && obj!== 0){ 
 	   		return (new String(obj)).toLowerCase();
@@ -52,6 +54,8 @@ Methods:
 	   	}
 	   },
 
+           //Gets an object as an input
+           //Returns an array of all the keys of the object.
 	   getKeys: function(obj){
 	   	if(obj === undefined || obj === null){
 	   		return obj;
@@ -60,6 +64,8 @@ Methods:
 	   	}
 	   },
 
+           //Gets an object as an input 
+           //Returns an array of values containing all the values of all keys in object provided.
 	   getValues: function(obj){
 	   	if(obj === undefined || obj === null){
 	   		return obj;
@@ -74,14 +80,17 @@ Methods:
    		}
 	   },
 
+           //Returns the tag required 
 	   getTag: function(tag){
 	   	return `<${tag}></${tag}>`;
 	   },
            
+           //Converts a decimal number (base 10) into binary number(base 2)
+           //Returns null if wrong input provided
            convertDecimalToBinary: function(num){
                 var isNum = isNaN(num);
                 if(isNum || (num % 2 > 1)){
-                    return false;
+                    return null;
                 } 
                 if(num === 0){
                   return num;
@@ -89,6 +98,41 @@ Methods:
                     let b = parseInt(num / 2), c = num % 2;
                     return convertDecimalToBinary(b) + c + ""; 
                 }
+           },
+           
+           //Pass the num in string format...
+           //After 21 character number format start providing in exponential format causing null as result
+           //Implemented in Iterative fashion
+           //2 exponential is calculated using recusrion
+           //Memoization is used to make calculation fast
+           convertBinaryToDecimal: function(num){
+                num = num + "";
+                var len = num.length,
+                    twoExponentialValues = [],
+                    getTwoExponentialValue = (pow)=>{
+                        if(pow === 0){
+                            return 1;
+                        } else {
+                            if(!twoExponentialValues[pow]){
+                                twoExponentialValues[pow] = 2 * getTwoExponentialValue(pow - 1);
+                            }
+                            return twoExponentialValues[pow];
+                        }
+                    },
+                    result = 0;
+                if(len === 0){
+                    return null;
+                } 
+                for(var i = 0; i < num.length ; i++){
+                    let numPos = parseInt(num[i]);
+                    if(numPos > 1){
+                        result = null;
+                        break;
+                    } else {
+                        result = result + (numPos * getTwoExponentialValue(num.length - i - 1));
+                    }
+                }
+                return result;
            }
 	}
 
