@@ -15,7 +15,12 @@ public class Parent {
 
 
 	public Parent(){
-		//System.out.println("Parent Created");
+		//Default constructor
+	}
+
+	//Parameterized constructor
+	public Parent(String message){
+		System.out.println(message);
 	}
 
 	public void PrintName(){

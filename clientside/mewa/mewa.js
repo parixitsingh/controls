@@ -76,7 +76,20 @@ Methods:
 
 	   getTag: function(tag){
 	   	return `<${tag}></${tag}>`;
-	   }
+	   },
+           
+           convertToBinary: function(num){
+                var isNum = isNaN(num);
+                if(isNum || (num % 2 > 1)){
+                    return false;
+                } 
+                if(num === 0){
+                  return num;
+                } else {
+                    let b = parseInt(num / 2), c = num % 2;
+                    return convertToBinary(b) + c + ""; 
+                }
+           }
 	}
 
    Object.keys(mds).forEach((key)=>{
